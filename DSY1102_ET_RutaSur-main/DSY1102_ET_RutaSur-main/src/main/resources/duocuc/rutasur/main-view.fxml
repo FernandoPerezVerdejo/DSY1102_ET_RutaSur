@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="711.0" prefWidth="1352.0" spacing="12" style="-fx-font-size: 13px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="duocuc.rutasur.controller.MainController">
+    <padding>
+        <Insets bottom="16" left="16" right="16" top="16" />
+    </padding>
+
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="RutaSur — Registro de peajes" />
+
+    <HBox prefHeight="670.0" prefWidth="1320.0" spacing="16" VBox.vgrow="ALWAYS">
+
+        <!-- Formulario -->
+        <VBox minWidth="340" prefHeight="684.0" prefWidth="340" spacing="10">
+            <Label style="-fx-font-weight: bold;" text="Datos generales" />
+            <GridPane hgap="10" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="118" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <Label text="Tipo" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="cbTipo" maxWidth="Infinity" promptText="Seleccione" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Patente" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtCodigo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Marca" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="txtHorasUso" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Modelo" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="txtPotencia" prefHeight="31.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Año Fabricación" GridPane.rowIndex="4" />
+            <TextField fx:id="txtPotencia1" prefHeight="10.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+            </GridPane>
+
+            <Separator prefHeight="2.0" prefWidth="340.0" />
+            <Label text="Auto" />
+            <GridPane hgap="10" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="118" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <Label text="N° de Puertas" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtPesoToneladas" prefHeight="27.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <rowConstraints>
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+            <CheckBox fx:id="chkMantencionAlDia" text="Tiene Remolque" />
+
+            <Separator />
+            <Label text="Camión" />
+            <GridPane hgap="10" vgap="8">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="118" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+                <Label text="Cantidad de ejes" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtCapacidadBalde" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <ComboBox fx:id="cbTipo1" maxWidth="Infinity" promptText="Seleccione" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Tipo de Rubro" GridPane.rowIndex="1" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+            </GridPane>
+
+            <Separator />
+         <GridPane hgap="10" vgap="8">
+            <columnConstraints>
+               <ColumnConstraints minWidth="118" />
+               <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <children>
+               <Label text="Moto" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+               <Label text="Cantidad de CC" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+               <TextField fx:id="txtCodigo1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <CheckBox fx:id="chkMantencionAlDia1" text="Tiene Remolque" GridPane.rowIndex="4" />
+            </children>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+         </GridPane>
+            <HBox prefHeight="13.0" prefWidth="340.0" spacing="8">
+                <Button fx:id="btnRegistrar" defaultButton="true" prefWidth="130" text="Registrar" />
+                <Button fx:id="btnCancelar" text="Cancelar edición" />
+            </HBox>
+        </VBox>
+
+        <!-- Tabla -->
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <TableView fx:id="tabla" prefHeight="523.0" prefWidth="945.0" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" prefWidth="40" text="ID" />
+                    <TableColumn fx:id="colTipo" prefWidth="163" text="Tipo" />
+                    <TableColumn fx:id="colCodigo" prefWidth="94" text="Patente" />
+                    <TableColumn fx:id="colHorasUso" prefWidth="129" text="Marca" />
+                    <TableColumn fx:id="colPotencia" prefWidth="137" text="Modelo" />
+                    <TableColumn fx:id="colCosto" prefWidth="115.0" text="Año Fabricación" />
+               <TableColumn fx:id="colCosto12" prefWidth="101.0" text="Costo Base" />
+               <TableColumn fx:id="colCosto1" prefWidth="104.0" text="Costo Total" />
+               <TableColumn fx:id="colCosto11" prefWidth="79.0" text="TAG" />
+                </columns>
+            </TableView>
+            <HBox spacing="8">
+                <Button text="Editar" />
+                <Button text="Eliminar" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <!-- Área de mensajes -->
+    <Label fx:id="lblMensaje" maxWidth="Infinity" minHeight="0.0" prefHeight="103.0" prefWidth="1320.0" wrapText="true" />
+</VBox>
