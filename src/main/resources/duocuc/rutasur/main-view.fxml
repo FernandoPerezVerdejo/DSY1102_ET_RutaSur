@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="711.0" prefWidth="1352.0" spacing="12" style="-fx-font-size: 13px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="duocuc.rutasur.controller.MainController">
+<VBox prefHeight="749.0" prefWidth="1302.0" spacing="12" style="-fx-font-size: 13px;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="duocuc.rutasur.controller.MainController">
     <padding>
         <Insets bottom="16" left="16" right="16" top="16" />
     </padding>
@@ -25,8 +25,33 @@
     <HBox prefHeight="670.0" prefWidth="1320.0" spacing="16" VBox.vgrow="ALWAYS">
 
         <!-- Formulario -->
-        <VBox minWidth="340" prefHeight="684.0" prefWidth="340" spacing="10">
+        <VBox minWidth="291.0" prefHeight="753.0" prefWidth="291.0" spacing="10">
             <Label style="-fx-font-weight: bold;" text="Datos generales" />
+         <GridPane hgap="10" vgap="8">
+            <columnConstraints>
+               <ColumnConstraints minWidth="118" />
+               <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            </rowConstraints>
+            <children>
+               <Label text="Rut" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+               <Label text="DV" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+               <TextField fx:id="txtCodigo2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+               <TextField fx:id="txtHorasUso1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               <Label text="Apellido" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+               <TextField fx:id="txtPotencia1" prefHeight="31.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               <Label text="Teléfono" GridPane.rowIndex="4" />
+               <TextField fx:id="txtPotencia11" prefHeight="10.0" prefWidth="212.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               <TextField fx:id="txtCodigo21" prefHeight="8.0" prefWidth="186.0" GridPane.columnIndex="1" />
+            </children>
+         </GridPane>
             <GridPane hgap="10" vgap="8">
                 <columnConstraints>
                     <ColumnConstraints minWidth="118" />
@@ -83,26 +108,23 @@
             </rowConstraints>
             </GridPane>
 
-            <Separator />
-         <GridPane hgap="10" vgap="8">
+            <Separator prefHeight="0.0" prefWidth="314.0" />
+         <GridPane>
             <columnConstraints>
-               <ColumnConstraints minWidth="118" />
-               <ColumnConstraints hgrow="ALWAYS" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
-            <children>
-               <Label text="Moto" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-               <Label text="Cantidad de CC" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-               <TextField fx:id="txtCodigo1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-               <CheckBox fx:id="chkMantencionAlDia1" text="Tiene Remolque" GridPane.rowIndex="4" />
-            </children>
             <rowConstraints>
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" />
-               <RowConstraints minHeight="10.0" prefHeight="30.0" />
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
             </rowConstraints>
+            <children>
+               <Label text="Moto" />
+               <Label text="Cantidad de CC" GridPane.rowIndex="1" />
+               <TextField fx:id="txtCodigo1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <CheckBox fx:id="chkMantencionAlDia1" text="Tiene Remolque" GridPane.rowIndex="2" />
+            </children>
          </GridPane>
             <HBox prefHeight="13.0" prefWidth="340.0" spacing="8">
                 <Button fx:id="btnRegistrar" defaultButton="true" prefWidth="130" text="Registrar" />
@@ -111,8 +133,8 @@
         </VBox>
 
         <!-- Tabla -->
-        <VBox spacing="8" HBox.hgrow="ALWAYS">
-            <TableView fx:id="tabla" prefHeight="523.0" prefWidth="945.0" VBox.vgrow="ALWAYS">
+        <VBox prefHeight="696.0" prefWidth="993.0" spacing="8" HBox.hgrow="ALWAYS">
+            <TableView fx:id="tabla" prefHeight="619.0" prefWidth="954.0" VBox.vgrow="ALWAYS">
                 <columns>
                     <TableColumn fx:id="colId" prefWidth="40" text="ID" />
                     <TableColumn fx:id="colTipo" prefWidth="163" text="Tipo" />
@@ -125,7 +147,7 @@
                <TableColumn fx:id="colCosto11" prefWidth="79.0" text="TAG" />
                 </columns>
             </TableView>
-            <HBox spacing="8">
+            <HBox prefHeight="0.0" prefWidth="964.0" spacing="8">
                 <Button text="Editar" />
                 <Button text="Eliminar" />
             </HBox>
@@ -133,5 +155,5 @@
     </HBox>
 
     <!-- Área de mensajes -->
-    <Label fx:id="lblMensaje" maxWidth="Infinity" minHeight="0.0" prefHeight="103.0" prefWidth="1320.0" wrapText="true" />
+    <Label fx:id="lblMensaje" maxWidth="Infinity" minHeight="0.0" prefHeight="27.0" prefWidth="1320.0" wrapText="true" />
 </VBox>
