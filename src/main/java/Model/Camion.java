@@ -32,6 +32,11 @@ public class Camion extends Vehiculo{
         this.rubro = rubro;
     }
 
+    public int getCostoBase(){
+        return 7000;
+    }
+
+
     @Override
     public String getTipo() {
         return "Camión";
@@ -39,7 +44,7 @@ public class Camion extends Vehiculo{
 
     @Override
     public int calcularPeaje(){
-        int total=7000;
+        int total=getCostoBase();
         total+=(300* cantidad_Ejes);
         if (rubro.equals("Agricola")){
             total+=1000;

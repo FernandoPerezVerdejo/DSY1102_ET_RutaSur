@@ -32,6 +32,10 @@ public class Moto extends Vehiculo{
         this.cilindros = cilindros;
     }
 
+    public int getCostoBase(){
+        return 800;
+    }
+
     @Override
     public String getTipo() {
         return "Moto";
@@ -39,7 +43,7 @@ public class Moto extends Vehiculo{
 
     @Override
     public int calcularPeaje(){
-        int total=800;
+        int total=getCostoBase();
         if (tiene_Equpaje){
             total+=1100;
         }
