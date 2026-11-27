@@ -11,6 +11,8 @@ module duocuc.rutasur {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens duocuc.rutasur to javafx.fxml;
+    opens duocuc.rutasur.controller to javafx.fxml;
+
+    opens duocuc.rutasur to javafx.graphics, javafx.fxml;
     exports duocuc.rutasur;
 }
